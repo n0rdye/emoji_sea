@@ -26,12 +26,18 @@ public class spawn : MonoBehaviour
     public bool end = false;
     public smile_message msg;
 
+    public Button b_reload,b_leave;
+
 
     void Start(){
         m_Animator = GameObject.Find("ship").gameObject.GetComponent<Animator>();
         fin_Animator = GameObject.Find("final").gameObject.GetComponent<Animator>();
         sits_left = sits.Length;
         msg = GameObject.Find("logic_text").GetComponent<smile_message>();
+        b_reload = GameObject.Find("btn_reload").gameObject.GetComponent<Button>();
+        b_leave = GameObject.Find("btn_leave").gameObject.GetComponent<Button>();
+        b_reload.onClick.AddListener(reload);
+        b_leave.onClick.AddListener(leave);
     }
 
 
